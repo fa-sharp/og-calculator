@@ -15,6 +15,8 @@ const divide = (n,m) => n / m;
  * @returns The operation applied to numbers n and m
  */
 export const operate = (op,n,m) => {
+    n = new Number(n);
+    m = new Number(m);
     switch (op) {
         case "ADD":
             return add(n,m);

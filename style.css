@@ -60,6 +60,7 @@
 
     border: solid 1px hsl(0, 0%, 40%);
     border-radius: 10px;
+    box-shadow: 0 0 2px;
 
     font-size: 1.3rem;
     text-align: center;
@@ -75,6 +76,7 @@
 
 .calculator button:active {
     background: hsl(189, 100%, 50%);
+    box-shadow: 0 0 0;
 }
 
 /* OPERATIONS BUTTONS */
