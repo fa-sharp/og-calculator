@@ -36,6 +36,10 @@ opButtons.forEach(opButton => {
 
     opButton.addEventListener('click', () => {
 
+        // check if stringing together multiple operations
+        if (savedOperand && savedOperation && !newOperandNeeded)
+            calcAndDisplayResult(resultDisplay.textContent);
+
         // save operation and operand
         savedOperand = resultDisplay.textContent;
         savedOperation = operation;
