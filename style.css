@@ -1,13 +1,13 @@
 .calculator {
     
-    min-width: 100px;
-    max-width: 400px;
+    min-width: 220px;
+    max-width: 360px;
 
     padding: 5px;
     border: solid 1px black;
     border-radius: 5px;
 
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(237, 237, 237);
 
     font-size: 1.2rem;
 }
@@ -28,6 +28,8 @@
 
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    
+    gap: 4px;
 
 }
 
@@ -37,9 +39,8 @@
     
     min-height: 2.5rem;
 
-    margin: 2px;
     border: solid 1px hsl(0, 0%, 40%);
-    border-radius: 5px;
+    border-radius: 10px;
 
     font-size: 1.2rem;
     text-align: center;
@@ -54,5 +55,18 @@
 }
 
 .calculator button:active {
-    background: hsl(189, 100%, 60%);
+    background: hsl(189, 100%, 50%);
+}
+
+.calculator button.op {
+    background-color: hsl(348, 100%, 87%);
+    font-weight: 700;
+}
+
+.calculator button.op:hover, .calculator button.op:focus {
+    background-color: hsl(348, 100%, 75%);
+}
+
+.calculator button.op:active {
+    background-color: hsl(348, 100%, 65%);
 }
