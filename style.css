@@ -3,7 +3,7 @@
     min-width: 220px;
     max-width: 360px;
 
-    padding: 5px;
+    padding: 8px;
     border: solid 1px black;
     border-radius: 5px;
 
@@ -13,31 +13,39 @@
 }
 
 .calculator .display {
+
+    display: flex;
+    align-items: center;
+
+    min-height: 1.8rem;
+
     border: solid 2px black;
     border-radius: 10px;
 
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 
     background-color: white;
 
     font-size: 1.4rem;
 }
 
+/* CSS GRID FOR BUTTONS */
 .calculator .buttons {
 
     display: grid;
     grid-template-columns: repeat(4,1fr);
     
-    gap: 4px;
+    gap: 5px;
 
 }
 
+/* ALL BUTTONS */
 .calculator button {
 
     all: initial;
     
-    min-height: 2.5rem;
+    min-height: 3rem;
 
     border: solid 1px hsl(0, 0%, 40%);
     border-radius: 10px;
@@ -58,15 +66,30 @@
     background: hsl(189, 100%, 50%);
 }
 
+/* OPERATIONS BUTTONS */
 .calculator button.op {
-    background-color: hsl(348, 100%, 87%);
+    background-color: hsl(231, 100%, 87%);
     font-weight: 700;
 }
 
 .calculator button.op:hover, .calculator button.op:focus {
-    background-color: hsl(348, 100%, 75%);
+    background-color: hsl(231, 100%, 75%);
 }
 
 .calculator button.op:active {
+    background-color: hsl(231, 100%, 65%);
+}
+
+/* CLEAR AND EQUALS BUTTONS */
+.calculator button.exec {
+    background-color: hsl(348, 100%, 85%);
+    font-weight: 700;
+}
+
+.calculator button.exec:hover, .calculator button.exec:focus {
+    background-color: hsl(348, 100%, 75%);
+}
+
+.calculator button.exec:active {
     background-color: hsl(348, 100%, 65%);
 }
