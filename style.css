@@ -12,10 +12,13 @@
     font-size: 1.2rem;
 }
 
+/* CALCULATOR DISPLAY */
 .calculator .display {
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 
     min-height: 1.8rem;
 
@@ -27,7 +30,15 @@
 
     background-color: white;
 
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+}
+
+#resultDisplay {
+    overflow: auto;
+}
+
+#opDisplay {
+    color: hsl(0, 0%, 37%);
 }
 
 /* CSS GRID FOR BUTTONS */
@@ -50,7 +61,7 @@
     border: solid 1px hsl(0, 0%, 40%);
     border-radius: 10px;
 
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center;
 
     background-color: white;
