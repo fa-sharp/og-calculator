@@ -3,6 +3,7 @@ import { operate } from './operations.js';
 const resultDisplay = document.querySelector("#resultDisplay");
 const opDisplay = document.querySelector("#opDisplay");
 
+const allButtons = document.querySelectorAll(".buttons");
 const numButtons = document.querySelectorAll(".buttons>.num");
 const opButtons = document.querySelectorAll(".buttons>.op");
 const clearButton = document.querySelector("#clear");
@@ -82,3 +83,45 @@ const calcAndDisplayResult = (secondOperand) => {
 }
 
 equalsButton.addEventListener('click', () => calcAndDisplayResult(resultDisplay.textContent));
+
+
+/** KEYBOARD USE */
+document.addEventListener('keypress', (event) => {
+
+    const keyPressed = event.key;
+    let buttonToPress;
+
+    if (!Number.isNaN(parseInt(keyPressed)))
+        buttonToPress = document.querySelector(`#NUM${keyPressed}`);
+    else {
+        switch (keyPressed) {
+            case '+':
+                buttonToPress = document.querySelector("#ADD");
+                break;
+            case '-':
+                buttonToPress = document.querySelector("#SUBTRACT");
+                break;
+            case '*':
+                buttonToPress = document.querySelector("#MULTIPLY");
+                break;
+            case '/':
+                buttonToPress = document.querySelector("#DIVIDE");
+                break;
+            case '=':
+            case 'Enter':
+                buttonToPress = equalsButton;
+                break;
+            case 'C':
+            case 'c':
+                buttonToPress = clearButton;
+                break;
+            default:
+                return;
+        }
+    }
+    
+    if (!buttonToPress)
+        return console.error("Valid keystroke, but couldn't find the right button to press!");
+
+    buttonToPress.click();
+});

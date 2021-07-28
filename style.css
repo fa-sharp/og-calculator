@@ -25,12 +25,12 @@
     border: solid 2px black;
     border-radius: 10px;
 
-    padding: 5px;
+    padding: 5px 8px;
     margin-bottom: 10px;
 
     background-color: white;
 
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 #resultDisplay {
