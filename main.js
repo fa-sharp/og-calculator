@@ -87,11 +87,16 @@ equalsButton.addEventListener('click', () => calcAndDisplayResult(resultDisplay.
 
 /** KEYBOARD USE */
 document.addEventListener('keypress', (event) => {
+    const buttonToPress = getButtonFromKey(event.key);     
+    if (buttonToPress)
+        buttonToPress.click();
+});
 
-    const keyPressed = event.key;
+const getButtonFromKey = (keyPressed) => {
+
     let buttonToPress;
 
-    if (!Number.isNaN(parseInt(keyPressed)))
+    if (!isNaN(keyPressed))
         buttonToPress = document.querySelector(`#NUM${keyPressed}`);
     else {
         switch (keyPressed) {
@@ -113,15 +118,13 @@ document.addEventListener('keypress', (event) => {
                 break;
             case 'C':
             case 'c':
+            case 'Escape':
                 buttonToPress = clearButton;
                 break;
             default:
-                return;
+                buttonToPress = null;
         }
     }
-    
-    if (!buttonToPress)
-        return console.error("Valid keystroke, but couldn't find the right button to press!");
 
-    buttonToPress.click();
-});
+    return buttonToPress;
+}
