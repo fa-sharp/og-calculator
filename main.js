@@ -67,7 +67,7 @@ clearButton.addEventListener('click', () => {
 const calcAndDisplayResult = (secondOperand) => {
     // check for first operand
     if (!savedOperand || !savedOperation)
-        return console.error("No saved operand and/or operation to calculate with!");
+        return;
     
     // calculate result
     const result = operate(savedOperation,savedOperand,secondOperand);
